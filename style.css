@@ -6,7 +6,8 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#071a3d;
+margin:0;
+background:linear-gradient(135deg,#071a3d,#0b2d63);
 color:#fff;
 text-align:center;
 }
@@ -115,9 +116,6 @@ transform:scale(1.05);
 
 html{
 scroll-behavior:smooth;
-}
-body{
-background:linear-gradient(135deg,#071a3d,#0b2d63);
 }
 
 .card{
