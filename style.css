@@ -175,3 +175,20 @@ iframe{
     display:block;
     box-shadow:0 0 20px rgba(255,215,0,.3);
 }
+.whatsapp-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:#fff;
+    padding:15px 20px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 0 15px rgba(0,0,0,.3);
+    z-index:999;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.08);
+  }
