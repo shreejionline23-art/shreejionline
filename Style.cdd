@@ -1,0 +1,85 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#071a3d;
+color:#fff;
+text-align:center;
+}
+
+header{
+padding:40px 20px;
+}
+
+.logo img{
+width:140px;
+border-radius:50%;
+box-shadow:0 0 20px gold;
+}
+
+h1{
+color:#FFD700;
+font-size:40px;
+margin-top:15px;
+}
+
+.tag{
+color:#ddd;
+margin:10px 0;
+}
+
+.buttons{
+display:flex;
+flex-direction:column;
+gap:15px;
+padding:20px;
+}
+
+.buttons a{
+text-decoration:none;
+padding:15px;
+border-radius:12px;
+font-size:18px;
+font-weight:bold;
+color:#fff;
+}
+
+.call{
+background:#0d6efd;
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.location{
+background:#dc3545;
+}
+
+.services{
+padding:30px 20px;
+}
+
+.services h2{
+color:#FFD700;
+margin-bottom:20px;
+}
+
+.card{
+background:#fff;
+color:#111;
+padding:15px;
+margin:10px;
+border-radius:12px;
+font-weight:bold;
+}
+
+footer{
+background:#04112a;
+padding:25px;
+margin-top:30px;
+  }
