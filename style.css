@@ -71,12 +71,19 @@ margin-bottom:20px;
 }
 
 .card{
-background:#fff;
-color:#111;
-padding:15px;
-margin:10px;
-border-radius:12px;
-font-weight:bold;
+    background:#ffffff;
+    color:#071a3d;
+    border-radius:15px;
+    padding:18px;
+    margin:15px;
+    font-weight:bold;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px gold;
 }
 
 footer{
