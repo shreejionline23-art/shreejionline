@@ -201,6 +201,27 @@ style="border:0;border-radius:15px;">
 <p>© 2026 Shreeji MPOnline</p>
 
 </footer>
+  <script>
+const accordionBtns = document.querySelectorAll(".accordion-btn");
+
+accordionBtns.forEach(btn => {
+  btn.addEventListener("click", function () {
+    const content = this.nextElementSibling;
+
+    document.querySelectorAll(".accordion-content").forEach(item => {
+      if (item !== content) {
+        item.style.display = "none";
+      }
+    });
+
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+});
+  </script>
 
 </body>
 
