@@ -306,3 +306,88 @@ color:#ddd;
 .search-box:focus{
 box-shadow:0 0 15px gold;
 }
+/* ===== Nested Service Accordion ===== */
+
+.sub-service{
+margin:15px 0;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,215,0,.25);
+border-radius:12px;
+overflow:hidden;
+}
+
+.sub-service summary{
+list-style:none;
+cursor:pointer;
+padding:16px 18px;
+font-size:17px;
+font-weight:600;
+color:#fff;
+background:#12356b;
+transition:.3s;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.sub-service summary::-webkit-details-marker{
+display:none;
+}
+
+.sub-service summary:hover{
+background:#1b4b96;
+}
+
+.sub-service[open] summary{
+background:#FFD700;
+color:#06152d;
+}
+
+.arrow{
+font-size:18px;
+transition:.3s;
+}
+
+.sub-service[open] .arrow{
+transform:rotate(90deg);
+}
+
+/* Content */
+
+.sub-service h4{
+margin:18px 15px 10px;
+font-size:17px;
+font-weight:700;
+}
+
+.doc-heading{
+color:#4FC3F7;
+}
+
+.time-heading{
+color:#4CAF50;
+}
+
+.note-heading{
+color:#FF9800;
+}
+
+.sub-service ul{
+list-style:none;
+padding:0 18px 15px;
+}
+
+.sub-service ul li{
+padding:10px 14px;
+margin:8px 0;
+background:rgba(255,255,255,.06);
+border-left:4px solid gold;
+border-radius:8px;
+color:#fff;
+transition:.3s;
+}
+
+.sub-service ul li:hover{
+transform:translateX(5px);
+background:rgba(255,255,255,.1);
+  }
