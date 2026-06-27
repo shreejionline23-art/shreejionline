@@ -241,6 +241,21 @@ accordionBtns.forEach(btn => {
     }
   });
 });
+    const searchBox = document.getElementById("searchBox");
+
+searchBox.addEventListener("keyup", function () {
+  let value = this.value.toLowerCase();
+
+  document.querySelectorAll(".service-box").forEach(function (box) {
+    let text = box.innerText.toLowerCase();
+
+    if (text.indexOf(value) > -1) {
+      box.style.display = "block";
+    } else {
+      box.style.display = "none";
+    }
+  });
+});
   </script>
 
 </body>
