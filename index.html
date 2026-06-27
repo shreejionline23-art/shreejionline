@@ -312,6 +312,63 @@ searchBox.addEventListener("keyup", function () {
     }
   });
 });
+    <script>
+// Main Service Open/Close
+document.querySelectorAll(".main-btn").forEach(btn => {
+
+  btn.addEventListener("click", function () {
+
+    const content = this.nextElementSibling;
+
+    document.querySelectorAll(".main-content").forEach(item => {
+      if(item !== content){
+        item.style.display = "none";
+      }
+    });
+
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
+
+  });
+
+});
+
+// Sub Service Open/Close
+document.querySelectorAll(".sub-btn").forEach(btn => {
+
+  btn.addEventListener("click", function () {
+
+    const content = this.nextElementSibling;
+
+    // Close all others
+    document.querySelectorAll(".sub-content").forEach(item => {
+      if(item !== content){
+        item.style.display = "none";
+      }
+    });
+
+    document.querySelectorAll(".sub-btn").forEach(item => {
+      if(item !== this){
+        item.classList.remove("active");
+        item.querySelector("span").innerHTML = "▶";
+      }
+    });
+
+    // Toggle current
+    if(content.style.display === "block"){
+      content.style.display = "none";
+      this.classList.remove("active");
+      this.querySelector("span").innerHTML = "▶";
+    }else{
+      content.style.display = "block";
+      this.classList.add("active");
+      this.querySelector("span").innerHTML = "▼";
+    }
+
+  });
+
+});
+
   </script>
 
 </body>
