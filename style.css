@@ -212,3 +212,46 @@ height:250px;
 }
 
   }
+.accordion{
+max-width:900px;
+margin:auto;
+}
+
+.accordion-btn{
+width:100%;
+background:#0d2d63;
+color:#FFD700;
+padding:18px;
+margin:10px 0;
+font-size:18px;
+font-weight:bold;
+text-align:left;
+border:none;
+border-radius:12px;
+cursor:pointer;
+transition:.3s;
+}
+
+.accordion-btn:hover{
+background:#FFD700;
+color:#06152d;
+}
+
+.accordion-content{
+display:none;
+background:rgba(255,255,255,.08);
+padding:15px 20px;
+border-radius:0 0 12px 12px;
+margin-top:-10px;
+margin-bottom:15px;
+border:1px solid rgba(255,215,0,.3);
+}
+
+.accordion-content p{
+padding:8px 0;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.accordion-content p:last-child{
+border-bottom:none;
+  }
