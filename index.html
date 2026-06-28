@@ -1302,32 +1302,6 @@ searchBox.addEventListener("input", function () {
 
             let firstMatch = null;
 
-            card.querySelectorAll(".sub-btn").forEach(btn => {
-
-                const sub = btn.nextElementSibling;
-                const text = (btn.innerText + " " + sub.innerText).toLowerCase();
-
-                if (text.includes(value)) {
-
-                    sub.style.display = "block";
-                    btn.classList.add("active");
-
-                    const arrow = btn.querySelector("span");
-                    if (arrow) arrow.innerHTML = "▼";
-
-                    if (!firstMatch) firstMatch = btn;
-
-                } else {
-
-                    sub.style.display = "none";
-                    btn.classList.remove("active");
-
-                    const arrow = btn.querySelector("span");
-                    if (arrow) arrow.innerHTML = "▶";
-
-                }
-
-            });
 
             if (firstMatch) {
                 firstMatch.scrollIntoView({
