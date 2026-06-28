@@ -1255,20 +1255,95 @@ style="border:0;border-radius:15px;">
 </footer>
   <script>
 
-    const searchBox = document.getElementById("searchBox");
+    // ================= PREMIUM SEARCH =================
 
-searchBox.addEventListener("keyup", function () {
-  let value = this.value.toLowerCase();
+const searchBox = document.getElementById("searchBox");
 
-  document.querySelectorAll(".service-box").forEach(function (box) {
-    let text = box.innerText.toLowerCase();
+searchBox.addEventListener("input", function () {
 
-    if (text.indexOf(value) > -1) {
-      box.style.display = "block";
-    } else {
-      box.style.display = "none";
-    }
-  });
+    const value = this.value.toLowerCase().trim();
+    const cards = document.querySelectorAll(".service-card");
+
+    cards.forEach(card => {
+
+        const cardText = card.innerText.toLowerCase();
+        const mainContent = card.querySelector(".main-content");
+
+        // Search empty
+        if (value === "") {
+
+            card.style.display = "";
+
+            if (mainContent) {
+                mainContent.style.display = "none";
+            }
+
+            card.querySelectorAll(".sub-content").forEach(sub => {
+                sub.style.display = "none";
+            });
+
+            card.querySelectorAll(".sub-btn").forEach(btn => {
+                btn.classList.remove("active");
+                const arrow = btn.querySelector("span");
+                if (arrow) arrow.innerHTML = "▶";
+            });
+
+            return;
+        }
+
+        // Match found
+        if (cardText.includes(value)) {
+
+            card.style.display = "";
+
+            if (mainContent) {
+                mainContent.style.display = "block";
+            }
+
+            let firstMatch = null;
+
+            card.querySelectorAll(".sub-btn").forEach(btn => {
+
+                const sub = btn.nextElementSibling;
+                const text = (btn.innerText + " " + sub.innerText).toLowerCase();
+
+                if (text.includes(value)) {
+
+                    sub.style.display = "block";
+                    btn.classList.add("active");
+
+                    const arrow = btn.querySelector("span");
+                    if (arrow) arrow.innerHTML = "▼";
+
+                    if (!firstMatch) firstMatch = btn;
+
+                } else {
+
+                    sub.style.display = "none";
+                    btn.classList.remove("active");
+
+                    const arrow = btn.querySelector("span");
+                    if (arrow) arrow.innerHTML = "▶";
+
+                }
+
+            });
+
+            if (firstMatch) {
+                firstMatch.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+            }
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
 });
     
 // Main Service Open/Close
